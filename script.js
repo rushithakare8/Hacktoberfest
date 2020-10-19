@@ -18,7 +18,7 @@ const searchStates = async searchText => {
     outputHtml(matches)
 };
 
-//funtion for output
+//funtion for output1
 const outputHtml = matches =>{
     if (matches.length > 0){
         const html = matches.map(match =>`
@@ -32,6 +32,26 @@ const outputHtml = matches =>{
         .join('');
         matchList.innerHTML = html;
     }
+    
+    
+    
+    //funtion for output2
+const outputHtml = matches =>{
+    if (matches.length > 5){
+        const html = matches.map(match =>`
+            <div class=" card card-body mb-3">
+                <h4>${match.number} (${match.email}) <span class="text-primary">
+                ${match.capital}
+                </span></h4>
+                <small>Lat: ${match.lat} / Long:${match.long}</small>
+            </div>
+        `)
+        .join('state description ');
+        matchList.innerHTML = html;
+    }
+    
+    
 }
+
 
 search.addEventListener('input', () => searchStates(search.value));
